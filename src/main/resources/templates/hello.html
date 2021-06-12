@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+    <style>
+        .main{
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    用户名：<input type="text" class="name" name="username"><br>
+    密&emsp;码：<input type="text" class="pwd" name="password"><br>
+    <input type="button" value="提交" class="sub-btn">
+</div>
+
+<script src="jquery/jquery.min.js" th:src="@{jquery/jquery.min.js}"></script>
+
+<script>
+    var key = 0;
+    $(function (){
+        key = Math.floor(Math.random() * 100);
+    });
+
+    $(".sub-btn").click(function (){
+        var name = $(".name").val();
+        var pwd = $(".pwd").val();
+        $.ajax({
+            url:'/login',
+            type:'post',
+            data:{username:name,password:pwd,key:key},
+            dataType:'json',
+            success:function (res) {
+                console.log(res);
+            }
+        })
+    });
+</script>
+
+</body>
+</html>
