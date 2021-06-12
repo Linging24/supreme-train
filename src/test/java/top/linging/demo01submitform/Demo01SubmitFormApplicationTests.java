@@ -8,6 +8,7 @@ class Demo01SubmitFormApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println("master主分支的代码");
     }
 
 }
