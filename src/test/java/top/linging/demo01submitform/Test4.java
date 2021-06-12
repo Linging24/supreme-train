@@ -13,5 +13,6 @@ public class Test4 {
     public void test(){
         System.out.println("1111");
         System.out.println("22222");
+        System.out.println("hahhahh");
     }
 }
